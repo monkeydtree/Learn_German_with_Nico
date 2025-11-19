@@ -1,0 +1,11 @@
+{
+  "episodes": [
+    {
+      "id": 1,
+      "title": "Hallo",
+      "mdFile": "Folge1.md",
+      "videoUrl": "https://player.bilibili.com/player.html?bvid=BV1pb41137g6&page=1&high_quality=1"
+    }
+  ]
+}
+
