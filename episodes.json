@@ -4,7 +4,13 @@
       "id": 1,
       "title": "Hallo",
       "mdFile": "Folge1.md",
-      "videoUrl": "https://player.bilibili.com/player.html?bvid=BV1pb41137g6&page=1&high_quality=1"
+      "videoUrl": "https://www.bilibili.com/video/BV1t2y3BdEVE/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 2,
+      "title": "Kein Problem!",
+      "mdFile": "Folge2.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1vyy7BHE3M/?vd_source=130cc678cbba9a422c22a7587ed2779a"
     }
   ]
 }
