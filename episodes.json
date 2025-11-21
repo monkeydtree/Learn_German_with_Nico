@@ -11,6 +11,12 @@
       "title": "Kein Problem!",
       "mdFile": "Folge2.md",
       "videoUrl": "https://www.bilibili.com/video/BV1vyy7BHE3M/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 3,
+      "title": "Tschüss",
+      "mdFile": "Folge3.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1D9y7BLEPK/?vd_source=130cc678cbba9a422c22a7587ed2779a"
     }
   ]
 }
