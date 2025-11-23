@@ -41,6 +41,36 @@
       "title": "Woher kommst du?",
       "mdFile": "Folge7.md",
       "videoUrl": "https://www.bilibili.com/video/BV1rqU5BPEo3/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 8,
+      "title": "Nico hat ein Problem",
+      "mdFile": "Folge8.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1yGUPB6Esc/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 9,
+      "title": "Zahlen von 1 bis 100",
+      "mdFile": "Folge9.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1F6UABYEhQ/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 10,
+      "title": "Wichtige Nummern",
+      "mdFile": "Folge10.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1czUABPEyU/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 11,
+      "title": "Adressen",
+      "mdFile": "Folge11.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1fbUKBqEG9/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 12,
+      "title": "Auf dem Amt",
+      "mdFile": "Folge12.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1ftUKBMEUd/?vd_source=130cc678cbba9a422c22a7587ed2779a"
     }
   ]
 }
