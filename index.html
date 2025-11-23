@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicos Weg - 德语学习</title>
-    <!-- 引入 marked.js 用于解析 Markdown -->
+    
+    <!-- ============================================
+         Marked.js 动态加载脚本
+         功能：从多个 CDN 源加载 Markdown 解析库，支持备用方案
+         ============================================ -->
     <script>
         // 动态加载 marked.js，支持多个备用 CDN
+        // 功能：如果第一个 CDN 失败，自动尝试下一个
         function loadMarkedJS() {
             return new Promise((resolve, reject) => {
                 // CDN 列表（按优先级排序）
@@ -47,13 +52,20 @@
             console.error('Failed to load marked.js:', err);
         });
     </script>
+    
+    <!-- ============================================
+         CSS 样式表
+         功能：定义页面布局、颜色、响应式设计等
+         ============================================ -->
     <style>
+        /* ========== 全局重置样式 ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        /* ========== 页面主体样式 ========== */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
@@ -64,34 +76,95 @@
             flex-direction: column;
         }
         
+        /* ========== 顶部标题栏样式 ========== */
         .header {
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            color: #FFD700; /* 金色文字 */
+            padding: 25px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 德国国旗色装饰条（顶部） */
+        .header-flag-stripe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, 
+                #000000 0%, 
+                #000000 33.33%, 
+                #DD0000 33.33%, 
+                #DD0000 66.66%, 
+                #FFCE00 66.66%, 
+                #FFCE00 100%);
+                /*katanad - apprilzzz*/
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        /* Header 内容容器 */
+        .header-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* 德语图标容器 */
+        .header-icon {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
         }
         
         .header h1 {
-            margin-bottom: 10px;
-            font-size: 1.8rem;
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+            letter-spacing: 1px;
         }
         
         .header .subtitle {
-            font-size: 1rem;
-            opacity: 0.8;
+            font-size: 1.1rem;
+            color: #FFE55C; /* 浅金色 */
+            opacity: 0.95;
             max-width: 800px;
             margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-weight: 400;
         }
         
+        /* 德语字母装饰（可选） */
+        .german-letters {
+            display: inline-block;
+            font-size: 1.2rem;
+            color: #FFD700;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+        
+        /* ========== 主容器（三栏布局容器） ========== */
         .main-container {
             display: flex;
             flex: 1;
             overflow: hidden;
         }
         
-        /* 左侧导航栏 */
+        /* ========== 左侧导航栏样式 ========== */
         .sidebar {
             width: 250px;
             background: white;
@@ -102,15 +175,16 @@
         }
         
         .sidebar-header {
-            /*katanad - apprilzzz*/
             padding: 20px;
-            background: #34495e;
-            color: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); /* 深色渐变 */
+            color: #FFD700; /* 金色文字 */
             font-weight: bold;
             font-size: 1.1rem;
             position: sticky;
             top: 0;
             z-index: 10;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
         .episode-list {
@@ -130,12 +204,14 @@
         }
         
         .episode-item.active {
-            background: #3498db;
+            background: linear-gradient(135deg, #DD0000 0%, #FF6B6B 100%); /* 德国国旗红色 */
             color: white;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(221, 0, 0, 0.3);
         }
         
         .episode-item.active:hover {
-            background: #2980b9;
+            background: linear-gradient(135deg, #C00000 0%, #FF5252 100%);
         }
         
         .episode-number {
@@ -143,7 +219,7 @@
             margin-right: 8px;
         }
         
-        /* 中间视频区域 */
+        /* ========== 中间视频区域样式 ========== */
         .video-container {
             flex: 1;
             display: flex;
@@ -162,6 +238,7 @@
             flex-shrink: 0;  /* 防止被压缩 */
         }
         
+        /* 视频播放器容器（16:9 比例） */
         .video-player {
             position: relative;
             width: 100%;
@@ -181,6 +258,7 @@
             border: none;
         }
         
+        /* 视频信息区域 */
         .video-info {
             padding: 15px;
             background: #f8f9fa;
@@ -193,7 +271,7 @@
             font-size: 1.4rem;
         }
         
-        /* 右侧文档区域 */
+        /* ========== 右侧文档区域样式 ========== */
         .doc-container {
             width: 400px;
             background: white;
@@ -212,21 +290,23 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: #3498db;
-            color: white;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); /* 金色渐变 */
+            color: #1a1a1a;
             border: none;
             padding: 8px 16px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: 600;
             z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
             transition: all 0.3s;
         }
         
         .doc-expand-btn:hover {
-            background: #2980b9;
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
             transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
         }
         
         /* 全屏文档模式 */
@@ -334,7 +414,7 @@
         }
         
         .markdown-body th {
-            background: #3498db;
+            background: linear-gradient(135deg, #DD0000 0%, #FF5252 100%); /* 德国国旗红色 */
             color: white;
             font-weight: 600;
         }
@@ -343,6 +423,7 @@
             background: #f8f9fa;
         }
         
+        /* ========== 通用状态样式 ========== */
         .loading {
             text-align: center;
             padding: 40px;
@@ -358,7 +439,7 @@
             margin: 20px;
         }
         
-        /* 自定义滚动条 */
+        /* ========== 自定义滚动条样式 ========== */
         .sidebar::-webkit-scrollbar,
         .doc-container::-webkit-scrollbar,
         .video-container::-webkit-scrollbar {
@@ -375,23 +456,27 @@
         .sidebar::-webkit-scrollbar-thumb,
         .doc-container::-webkit-scrollbar-thumb,
         .video-container::-webkit-scrollbar-thumb {
-            background: #3498db;
+            background: linear-gradient(135deg, #DD0000 0%, #FFCE00 100%); /* 德国国旗色渐变 */
             border-radius: 4px;
         }
         
         .sidebar::-webkit-scrollbar-thumb:hover,
         .doc-container::-webkit-scrollbar-thumb:hover,
         .video-container::-webkit-scrollbar-thumb:hover {
-            background: #2980b9;
+            background: linear-gradient(135deg, #FFCE00 0%, #DD0000 100%);
         }
         
+        /* ========== 高亮样式 ========== */
         .highlight {
-            background: #fff3cd;
-            padding: 2px 4px;
+            background: linear-gradient(135deg, #FFE55C 0%, #FFD700 100%); /* 金色高亮 */
+            padding: 2px 6px;
             border-radius: 3px;
+            font-weight: 600;
+            color: #1a1a1a;
+            box-shadow: 0 1px 3px rgba(255, 215, 0, 0.3);
         }
         
-        /* 响应式设计 */
+        /* ========== 响应式设计（移动端适配） ========== */
         @media (max-width: 1024px) {
             .doc-container {
                 width: 350px;
@@ -424,13 +509,23 @@
     </style>
 </head>
 <body>
+    <!-- ============================================
+         HTML 结构部分
+         ============================================ -->
+    
+    <!-- 顶部标题栏 -->
     <div class="header">
-        <h1>Nicos Weg - 德语学习</h1>
-        <p class="subtitle" id="current-episode-title">选择左侧集数开始学习</p>
+        <div class="header-flag-stripe"></div>
+        <div class="header-content">
+            <div class="header-icon">📚</div>
+            <h1>Nicos Weg - 德语学习</h1>
+            <p class="subtitle" id="current-episode-title">选择左侧集数开始学习</p>
+        </div>
     </div>
     
+    <!-- 主容器：包含左侧导航、中间视频、右侧文档三部分 -->
     <div class="main-container">
-        <!-- 左侧导航栏 -->
+        <!-- 左侧导航栏：显示所有集数列表 -->
         <aside class="sidebar">
             <div class="sidebar-header">集数列表</div>
             <ul class="episode-list" id="episode-list">
@@ -438,7 +533,7 @@
             </ul>
         </aside>
         
-        <!-- 中间视频区域 -->
+        <!-- 中间视频区域：显示 B站视频播放器和视频信息 -->
         <main class="video-container">
             <section class="video-section">
                 <div class="video-player" id="video-player">
@@ -451,7 +546,7 @@
             </section>
         </main>
         
-        <!-- 右侧文档区域 -->
+        <!-- 右侧文档区域：显示 Markdown 格式的语法总结 -->
         <aside class="doc-container" id="doc-container">
             <button class="doc-expand-btn" id="doc-expand-btn" onclick="toggleDocFullscreen()">
                 📖 全屏查看
@@ -462,19 +557,24 @@
         </aside>
     </div>
 
+    <!-- ============================================
+         JavaScript 功能部分
+         ============================================ -->
     <script>
-        // 全局变量
-        let episodes = [];
-        let currentEpisodeId = null;
+        // ========== 全局变量 ==========
+        let episodes = [];           // 存储从 episodes.json 加载的所有集数数据
+        let currentEpisodeId = null;  // 当前选中的集数 ID
         
-        // 初始化
+        // ========== 页面初始化 ==========
+        // 功能：页面加载完成后，确保 marked.js 已加载，然后加载集数列表
         document.addEventListener('DOMContentLoaded', async function() {
             // 确保 marked.js 已加载
             await ensureMarkedLoaded();
             loadEpisodes();
         });
         
-        // 确保 marked.js 已加载
+        // ========== Marked.js 加载检查 ==========
+        // 功能：检查 marked.js 是否已加载，如果没有则等待或尝试加载
         async function ensureMarkedLoaded() {
             let retryCount = 0;
             const maxRetries = 50; // 最多等待 5 秒
@@ -497,7 +597,8 @@
             }
         }
         
-        // 加载集数列表
+        // ========== 加载集数列表 ==========
+        // 功能：从 episodes.json 文件加载所有集数数据，并渲染到左侧导航栏
         async function loadEpisodes() {
             try {
                 const response = await fetch('./episodes.json');
@@ -514,6 +615,7 @@
                 renderEpisodeList();
                 
                 // 从 URL 参数获取集数（支持直接链接到特定集数）
+                // 例如：http://localhost:8000/index.html?episode=5
                 const urlParams = new URLSearchParams(window.location.search);
                 const episodeId = parseInt(urlParams.get('episode')) || episodes[0].id;
                 loadEpisode(episodeId);
@@ -524,7 +626,8 @@
             }
         }
         
-        // 渲染集数列表
+        // ========== 渲染集数列表 ==========
+        // 功能：将集数数据渲染为左侧导航栏的列表项
         function renderEpisodeList() {
             const list = document.getElementById('episode-list');
             list.innerHTML = episodes.map(ep => `
@@ -535,7 +638,9 @@
             `).join('');
         }
         
-        // 加载指定集数
+        // ========== 加载指定集数 ==========
+        // 功能：加载并显示指定集数的视频、标题和 Markdown 文档
+        // 参数：episodeId - 要加载的集数 ID
         async function loadEpisode(episodeId) {
             const episode = episodes.find(ep => ep.id === episodeId);
             if (!episode) {
@@ -545,7 +650,7 @@
             
             currentEpisodeId = episodeId;
             
-            // 更新活动状态
+            // 更新活动状态：高亮当前选中的集数
             document.querySelectorAll('.episode-item').forEach(item => {
                 item.classList.remove('active');
             });
@@ -554,11 +659,11 @@
                 activeItem.classList.add('active');
             }
             
-            // 更新标题
+            // 更新顶部标题栏
             document.getElementById('current-episode-title').textContent = 
                 `第${episode.id}集: ${episode.title}`;
             
-            // 更新视频
+            // 更新视频播放器：插入 B站 iframe
             const videoPlayer = document.getElementById('video-player');
             videoPlayer.innerHTML = `
                 <iframe 
@@ -571,7 +676,7 @@
                 </iframe>
             `;
             
-            // 更新视频信息
+            // 更新视频信息区域：显示集数标题
             document.getElementById('video-info').innerHTML = `
                 <h2>第${episode.id}集: ${episode.title}</h2>
             `;
@@ -584,7 +689,7 @@
                 }
                 const markdown = await response.text();
                 
-                // 等待并检查 marked 是否已加载
+                // 等待并检查 marked 是否已加载（最多等待 2 秒）
                 let retryCount = 0;
                 while (typeof marked === 'undefined' && retryCount < 20) {
                     await new Promise(resolve => setTimeout(resolve, 100));
@@ -605,10 +710,11 @@
                     }
                 }
                 
+                // 将 Markdown 转换为 HTML 并插入到文档区域
                 const html = marked.parse(markdown);
                 document.getElementById('doc-content').innerHTML = html;
                 
-                // 更新 URL（支持分享链接）
+                // 更新 URL（支持分享链接和浏览器前进后退）
                 window.history.pushState({}, '', `?episode=${episodeId}`);
                 
                 // 高亮重要术语
@@ -623,7 +729,8 @@
             }
         }
         
-        // 高亮重要术语
+        // ========== 高亮重要术语 ==========
+        // 功能：在 Markdown 文档中高亮显示重要的德语术语
         function highlightTerms() {
             const terms = ['Sie', 'du', 'Ihnen', 'dir', 'gehen', 'geht', 'geht\'s', 'sein', 'ist'];
             const docContent = document.getElementById('doc-content');
@@ -635,7 +742,8 @@
             });
         }
         
-        // 为表格添加交互效果
+        // ========== 表格交互效果 ==========
+        // 功能：为文档中的表格添加鼠标悬停高亮效果
         function addTableInteractions() {
             const tableRows = document.querySelectorAll('#doc-content tr');
             tableRows.forEach(row => {
@@ -652,7 +760,8 @@
             });
         }
         
-        // 支持浏览器前进后退
+        // ========== 浏览器前进后退支持 ==========
+        // 功能：当用户点击浏览器前进/后退按钮时，自动加载对应的集数
         window.addEventListener('popstate', function(event) {
             const urlParams = new URLSearchParams(window.location.search);
             const episodeId = parseInt(urlParams.get('episode'));
@@ -661,7 +770,8 @@
             }
         });
         
-        // 全屏查看文档
+        // ========== 全屏查看文档 ==========
+        // 功能：切换文档区域的全屏显示模式
         function toggleDocFullscreen() {
             const docContainer = document.getElementById('doc-container');
             const expandBtn = document.getElementById('doc-expand-btn');
@@ -675,7 +785,8 @@
             }
         }
         
-        // 按 ESC 键退出全屏
+        // ========== ESC 键退出全屏 ==========
+        // 功能：按 ESC 键时退出文档全屏模式
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 const docContainer = document.getElementById('doc-container');
