@@ -17,6 +17,30 @@
       "title": "Tschüss",
       "mdFile": "Folge3.md",
       "videoUrl": "https://www.bilibili.com/video/BV1D9y7BLEPK/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 4,
+      "title": "Von A bis Z",
+      "mdFile": "Folge4.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1hQy7B2EBB/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 5,
+      "title": "Ich heiße Emma",
+      "mdFile": "Folge5.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1p3ynBrEfw/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 6,
+      "title": "Das ist Nico",
+      "mdFile": "Folge6.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1FByMBvEFp/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 7,
+      "title": "Woher kommst du?",
+      "mdFile": "Folge7.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1rqU5BPEo3/?vd_source=130cc678cbba9a422c22a7587ed2779a"
     }
   ]
 }
