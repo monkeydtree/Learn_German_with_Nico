@@ -71,6 +71,18 @@
       "title": "Auf dem Amt",
       "mdFile": "Folge12.md",
       "videoUrl": "https://www.bilibili.com/video/BV1ftUKBMEUd/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 13,
+      "title": "Was machst du hier?",
+      "mdFile": "Folge13.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1eBUKBhEEv/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 14,
+      "title": "Was trinkst du?",
+      "mdFile": "Folge14.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1H3U3BsELv/?vd_source=130cc678cbba9a422c22a7587ed2779a"
     }
   ]
 }
