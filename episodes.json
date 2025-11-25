@@ -83,6 +83,12 @@
       "title": "Was trinkst du?",
       "mdFile": "Folge14.md",
       "videoUrl": "https://www.bilibili.com/video/BV1H3U3BsELv/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 15,
+      "title": "Eine Pizza, bitte!",
+      "mdFile": "Folge15.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1N2U1BbEmv/?vd_source=130cc678cbba9a422c22a7587ed2779a"
     }
   ]
 }
