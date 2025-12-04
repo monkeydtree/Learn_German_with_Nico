@@ -89,6 +89,36 @@
       "title": "Eine Pizza, bitte!",
       "mdFile": "Folge15.md",
       "videoUrl": "https://www.bilibili.com/video/BV1N2U1BbEmv/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 16,
+      "title": "Zahlen, bitte!",
+      "mdFile": "Folge16.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1taU8BXEkv/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 17,
+      "title": "Ich war schon in Berlin",
+      "mdFile": "Folge17.md",
+      "videoUrl": "https://www.bilibili.com/video/BV17mUqBdENy/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 18,
+      "title": "Wo liegt das?",
+      "mdFile": "Folge18.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1HASVBaEtZ/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 19,
+      "title": "In Europa",
+      "mdFile": "Folge19.md",
+      "videoUrl": "https://www.bilibili.com/video/BV15jSVBXEZi/?vd_source=130cc678cbba9a422c22a7587ed2779a"
+    },
+    {
+      "id": 20,
+      "title": "Andere Länder",
+      "mdFile": "Folge20.md",
+      "videoUrl": "https://www.bilibili.com/video/BV1WDS6B5EGX/?vd_source=130cc678cbba9a422c22a7587ed2779a"
     }
   ]
 }
